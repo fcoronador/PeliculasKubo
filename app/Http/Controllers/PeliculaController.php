@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class PeliculaController extends Controller
 {
+
+    private $modelo;
+
+    public function __construct()
+    {
+        $this->modelo = new pelicula();   
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        //
+        return $this->modelo->getPeliculas();
     }
 
     /**

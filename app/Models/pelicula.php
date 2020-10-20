@@ -2,15 +2,21 @@
 
 namespace App\Models;
 
-use App\Modelo\daopelicula;
-
+use App\Models\daopelicula;
 
 class pelicula 
 {
-   
-    private function getPeliculas()
-    {
+    private $dao;
 
+    public function __construct()
+    {
+        $this->dao = new daopelicula();
+    }
+
+
+    public function getPeliculas()
+    {
+        return $this->dao->getPeli();
     }
 
 
