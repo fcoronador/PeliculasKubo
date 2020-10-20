@@ -37,9 +37,9 @@ class pelicula
             unset($item->nombre);
         }
 
-        dd($peliculas);
+        //dd($peliculas);
         //$index[0]->nuevo = ['cat', 'dog'];
-        return $index;
+        return $peliculas;
     }
 
 
