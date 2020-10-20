@@ -2,10 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Modelo\daopelicula;
 
-class pelicula extends Model
+
+class pelicula 
 {
-    use HasFactory;
+   
+    private function getPeliculas()
+    {
+
+    }
+
+
+
 }
