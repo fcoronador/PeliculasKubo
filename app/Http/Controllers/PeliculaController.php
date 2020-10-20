@@ -21,7 +21,8 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        return $this->modelo->getPeliculas();
+        $index = $this->modelo->getPeliculas();
+        return response($index,200);
     }
 
     /**

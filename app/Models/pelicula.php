@@ -16,7 +16,30 @@ class pelicula
 
     public function getPeliculas()
     {
-        return $this->dao->getPeli();
+        
+        $index = $this->dao->getPeli();
+        $peliculas = [];
+
+        foreach($index as $item)
+        {
+            if(array_key_exists($item->idpelicula,$peliculas))
+            {
+                array_push($peliculas[$item->idpelicula]->cate, $item->nombre);
+            }
+            else{
+                $item->cate = [$item->nombre];
+                $peliculas[$item->idpelicula]= $item;
+            }
+        }
+
+        foreach($peliculas as $item)
+        {
+            unset($item->nombre);
+        }
+
+        dd($peliculas);
+        //$index[0]->nuevo = ['cat', 'dog'];
+        return $index;
     }
 
 
