@@ -33,7 +33,8 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rta = $this->modelo->setPeliculas($request);
+        return response($rta, 200);
     }
 
     /**

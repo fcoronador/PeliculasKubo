@@ -42,6 +42,21 @@ class pelicula
         return $peliculas;
     }
 
+    public function setPeliculas($request)
+    {
+        $pelicula = [];
+        $pelicula['titulo'] = $request->get('titulo');
+        $pelicula['descrip'] = $request->get('descrip');
+        $pelicula['estreno'] = str_replace('-','/',$request->get('estreno'));
+        $pelicula['duracion'] = $request->get('duracion');
+        $pelicula['img'] = $request->get('img');
+        $pelicula['trailer'] = $request->get('trailer');
+        $categoria = $request->get('cate');
+        
+        $this->dao->setPeli($pelicula, $categoria);
+
+    }
+
 
 
 }
