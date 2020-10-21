@@ -14,8 +14,7 @@ use App\Http\Controllers\PeliculaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {return view('welcome');
 });
 
 //Route::get('/pelis', [PeliculaController::class, 'index']);
